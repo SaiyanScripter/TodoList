@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <title>Todo List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Todo List</h1>
-    <form id="task-form">
-        <input type="text" id="task-input" placeholder="Enter task...">
-        <button type="submit">Add Task</button>
-    </form>
-    <ul id="task-list"></ul>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="left-panel">
+      <div class="title-bar">
+        <button class="button title" id="add-task-button">+ New task</button>
+      </div>
+	  <div class="timer-container">
+		<div class="timer">00:00:00</div>
+	  </div>
+      <div class="footer">
+        <div class="divider-container">
+          <div class="divider"></div>
+        </div>
+        <div class="button-container">
+          <button class="button left-button">Clear Tasks</button>
+          <button class="button right-button"  id="theme-button">Dark Theme</button>
+        </div>
+      </div>
+    </div>
+    <div class="content-section" data-theme="light">
+      <!-- Content section content goes here -->
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

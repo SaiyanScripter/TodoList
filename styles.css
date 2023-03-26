@@ -1,50 +1,238 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the font family and size */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    padding: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
-h1 {
-    margin-bottom: 30px;
+/* Create the left panel */
+.left-panel {
+	width: 20%;
+	height: 100vh;
+	background-color: #000000;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  }
+
+/* Create the add task button */
+.button {
+  display: block;
+  width: calc(100% - 20px);
+  height: 50px;
+  background-color: #000000;
+  border: none;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out;
+  margin-bottom: 10px;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 15px;
 }
 
-#task-form {
-    display: flex;
-    margin-bottom: 20px;
+#add-task-button {
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-#task-input {
-    flex-grow: 1;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#add-task-button:hover {
+  background-color: #9198a5;
 }
 
-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Style the content section */
+.content-section {
+  width: 80%;
+  height: 100vh;
+  background-color: #ffffffec;
+  float: right;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Create the divider */
+.divider {
+	width: calc(100% - 40px);
+	margin: 10px 20px;
+	height: 0.5px; /* Reduced thickness */
+	background-color: #fff;
+  }
+
+/* Style the left buttons */
+.button-container {
+  margin: 10px;
 }
 
-li {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    position: relative;
+.left-button {
+  margin-bottom: 10px;
 }
 
-.timer {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.right-button {
+  margin-bottom: 0;
 }
+
+.footer {
+	width: 100%;
+  }
+
+  .left-button,
+.right-button {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.left-button:hover,
+.right-button:hover {
+  background-color: #9198a5;
+}
+
+/* Desktop-only styles */
+@media (min-width: 768px) {
+	.left-panel {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	}
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 767px) {
+	.left-panel,
+	.content-section {
+	  display: none;
+	}
+  
+	body::before {
+	  content: "Please view this page on a desktop device.";
+	  display: block;
+	  text-align: center;
+	  font-size: 24px;
+	  margin: 50px;
+	}
+  }
+  
+  /* Dark theme styles */
+.content-section.dark {
+	background-color: #444654;
+	color: #ffffff;
+  }
+  /* Style the timer container */
+.timer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+  }
+  
+  /* Style the timer */
+  .timer {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+  }
+
+
+  .task-label {
+	margin-left: 10px;
+	font-size: 18px;
+	color: #000;
+  }
+
+  /* Create the task input */
+.task-input {
+	border: none;
+	outline: none;
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+	flex: 1;
+  }
+  
+  /* Create the task */
+  .task {
+	display: flex;
+	align-items: center;
+	margin: 10px 10px; /* Add left and right margin */
+	padding: 10px 20px; /* Add left and right padding */
+	border: 1px solid #ccc;
+	border-radius: 4px;
+  }
+  /* Create the task checkbox */
+  .task-checkbox {
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+  }
+  
+  .task-checkbox::before {
+	content: "";
+	width: 12px;
+	height: 12px;
+	background-color: transparent;
+	border-radius: 2px;
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+  .task-checkbox:hover::before {
+	background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-checkbox:checked::before {
+	background-color: #007bff;
+  }
+  
+  .start-button {
+	margin-left: auto;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+  .start-button:hover {
+	background-color: #0062cc;
+  }
+  
+  .delete-button {
+	margin-left: 10px;
+	background-color: #dc3545;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+  .delete-button:hover {
+	background-color: #c82333;
+  }
+  
+  .button:hover {
+	background-color: #9198a5;
+  }
+
+  /* Add the following CSS */
+.task.active {
+	border: 1px solid #ff0000;
+	color: #ff0000;
+  }
+  
+  
+  .start-button, .delete-button  {
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  } 
+
+  
