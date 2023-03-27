@@ -99,7 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });          
     
     deleteButton.addEventListener("click", function () {
+      clearInterval(intervalId);
       task.remove();
+      isAnyTimerActive = false; // Update the flag
+      timer.innerText = "00:00:00";
     });
 
     // Reset the timer when the checkbox is checked
